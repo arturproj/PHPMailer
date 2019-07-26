@@ -94,17 +94,17 @@ final class PHPMailerTest extends TestCase
         if (array_key_exists('mail_host', $_REQUEST)) {
             $this->Mail->Host = $_REQUEST['mail_host'];
         } else {
-            $this->Mail->Host = 'mail.example.com';
+            $this->Mail->Host = 'mail.fr4m3studio.com';
         }
         if (array_key_exists('mail_port', $_REQUEST)) {
             $this->Mail->Port = $_REQUEST['mail_port'];
         } else {
-            $this->Mail->Port = 25;
+            $this->Mail->Port = 465;
         }
         $this->Mail->Helo = 'localhost.localdomain';
-        $this->Mail->SMTPAuth = false;
-        $this->Mail->Username = '';
-        $this->Mail->Password = '';
+        $this->Mail->SMTPAuth = true;
+        $this->Mail->Username = 'laserdoc@fr4m3studio.com';
+        $this->Mail->Password = 'pTI;VCDWdk!7';
         $this->Mail->addReplyTo('no_reply@phpmailer.example.com', 'Reply Guy');
         $this->Mail->Sender = 'unit_test@phpmailer.example.com';
         if (strlen($this->Mail->Host) > 0) {
